@@ -4,7 +4,7 @@ import os
 import requests
 import random
 from flask import jsonify
-
+from flask import request
 
 
 #So this shit runs on heruko
@@ -129,6 +129,16 @@ def get_match_list(user_id):
 		return_list.append(opp_dict[op_id])
 	return_object = {'list': return_list}
 	return jsonify(return_object)
+
+
+#Code I stole off github to allow CORS
+
+def add_cors_headers(response):
+	response.headers['Access-Control-Allow-Origin'] = '*'
+	return response
+app.after_request(add_cors_headers) 
+
+###
 
 
 app.debug = True

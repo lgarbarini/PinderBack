@@ -6,6 +6,7 @@ import random
 from flask import jsonify
 
 
+
 #So this shit runs on heruko
 port = int(os.environ.get('PORT', 5000))
 
@@ -70,6 +71,13 @@ class User:
 
 users_map = {}
 
+def get_user(user_id):
+	if user_id in list(users_map):
+		return users_map[user_id]
+	else:
+		users_map[user_id] = User()
+		return users_map[user_id]
+
 ##
 
 @app.route("/")
@@ -90,10 +98,9 @@ def swipey_page(user_id):
 def get_next_opportunity(user_id):
 	# Replace later based off of user preference data....
 	opp = random.choice(opportunities_list)
-	user = users_map[user_id]
+	user = get_user(user_id)
 	while (user.has_not_seen(opp)) == 0:
 		opp = random.choice(opportunities_list)
-		print "infinite loop?" +  str(~user.has_not_seen(opp))
 	return jsonify(opp)
 
 
@@ -101,21 +108,21 @@ def get_next_opportunity(user_id):
 
 @app.route("/SwipeLeft/<user_id>/<op_id>")
 def post_swipe_left(user_id, op_id):
-	user = users_map[user_id]
+	user = get_user(user_id)
 	user.add_to_left(op_id)
 
 #POST swipe right
 
 @app.route("/SwipeRight/<user_id>/<op_id>")
 def post_swipe_right(user_id, op_id):
-	user = users_map[user_id]
+	user = get_user(user_id)
 	user.add_to_right(op_id)
 
 #GET match list
 
 @app.route("/GetMatchList/<user_id>")
 def get_match_list(user_id):
-	match_list = users_map[user_id].get_matches_list()
+	match_list = get_user(user_id).get_matches_list()
 	# return str(opp_dict[users_map[user_id].get_matches_list()[0]])
 	return_list = []
 	for op_id in match_list:

@@ -12,11 +12,21 @@ app = Flask('Pinder')
 ##########################
 ## Loading the Data Set ##
 
-r = requests.get('http://www.peacecorps.gov/api/v1/openings/')
-list_of_stuffs = r.json()['results']
+r = requests.get('http://www.peacecorps.gov/api/v1/openings/?page=1')
+next_url = r.json()['next']
+
+opprtunities_list = r.json()['results']
+
+while next_url != None:
+	r = requests.get(next_url)
+	opprtunities_list += r.json()['results']
+	next_url = r.json()['next']
+
 print r.json()['next']
-for l in list_of_stuffs:
-	print l['title']
+# for l in opprtunities_list:
+# 	print l['title']
+
+print len(opprtunities_list)
 
 ##########################
 

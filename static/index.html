@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tinder4peace</title>
+<meta name="description" content="Tinder for Peacecorps">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width user-scalable=no">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link href="css/main.css" rel="stylesheet" type="text/css" media="screen" />
+
+</head>
+<body>
+<div id="userid" style="display: none;">testuser</div>
+<div id="page">
+ 	
+    <div id="menu">
+        <div id="menuButton" class="menuButton" onclick="showOptions()"></div>
+        <div id="searchButton" class="menuButton" onclick="showSearch()">search</div>
+        <div id="matchesButton" class="menuButton" onclick="showMatches()">matches</div>
+    </div>
+    <div id="optionsContainer" >
+        <div id="userProfile" class="option">user</div>
+        <div id="preferences" class="option">preferences</div>
+        <div id="share" class="option">share</div>
+        <div id="contact" class="option">contact</div>
+
+    </div>
+    <div id="optionsPages">
+        <div id="userProfilePage" class="optionsPage">user</div>
+        <div id="preferencesPage" class="optionsPage">
+            <h1>preferences</h1>
+            <input type="checkbox">option1</input>
+            <input type="checkbox">option2</input>
+            <input type="checkbox">option3</input>
+            <input type="checkbox">option4</input>
+        </div>
+        <div id="sharePage" class="optionsPage">share</div>
+        <div id="contactPage" class="optionsPage">contact</div>
+    </div>
+    
+    <div id="swipeyPageContainer">
+        <div id="cardsContainer">
+        </div>
+        <div id="buttons">
+            <div id="leftButton" onclick="matchNo()"></div>
+            <div id="rightButton" onclick="matchYes()"></div>
+        </div>
+    </div>
+    <div id="matchesContainer">
+    </div>
+    <div id="detailContainer">
+        <div id="detailMenu">
+            <div id="SMhide" onclick="hideDetail()"></div>
+            <div id="SMleftButton" onclick="matchNo()"></div>
+            <div id="SMrightButton" onclick="matchYes()"></div>            
+        </div>
+        <div id="detailCard"></div>
+
+    </div>
+		<canvas id="acanvas"></canvas>
+		
+</div>
+</body>
+<script src='js/background.js'></script>
+
+</html>

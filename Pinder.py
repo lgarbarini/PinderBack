@@ -19,7 +19,7 @@ opprtunities_list = r.json()['results']
 
 while next_url != None:
 	r = requests.get(next_url)
-	opprtunities_list += r.json()['results']
+	opportunities_list += r.json()['results']
 	next_url = r.json()['next']
 
 # print r.json()['next']
@@ -35,7 +35,7 @@ while next_url != None:
 
 @app.route("/")
 def hello():
-    return "Hello World!" +"\n"+ str(list_of_stuffs)
+    return "Hello World!" +"\n"+ str(opportunities_list)
 
 #GET the swipey page
 

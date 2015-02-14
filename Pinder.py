@@ -33,7 +33,7 @@ while next_url != None:
 
 
 opp_dict = {}
-for opp in opprtunities_list:
+for opp in opportunities_list:
 	opp_dict[opp['req_id']] = opp
 
 ##########################
@@ -85,7 +85,7 @@ def swipey_page(user_id):
 @app.route("/GetNextOp/<user_id>")
 def get_next_opportunity(user_id):
 	# Replace later based off of user preference data....
-	opp = random.choice(opprtunities_list)
+	opp = random.choice(opportunities_list)
 	return jsonify(opp)
 
 

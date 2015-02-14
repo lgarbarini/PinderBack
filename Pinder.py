@@ -1,5 +1,6 @@
 from flask import Flask
 import redis
+import os
 
 port = int(os.environ.get('PORT', 5000))
 app = Flask('Pinder')

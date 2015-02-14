@@ -2,6 +2,18 @@ from flask import Flask
 import redis
 app = Flask('Pinder')
 
+
+##########################
+## Loading the Data Set ##
+
+
+
+
+##########################
+
+
+
+
 @app.route("/")
 def hello():
     return "Hello World!"

@@ -14,9 +14,7 @@ app = Flask('Pinder')
 
 r = requests.get('http://www.peacecorps.gov/api/v1/openings/')
 list_of_stuffs = r.json()['results']
-print r.json()['next']
-for l in list_of_stuffs:
-	print l['title']
+
 
 ##########################
 
@@ -25,7 +23,7 @@ for l in list_of_stuffs:
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return "Hello World!" +"\n"+ str(list_of_stuffs)
 
 #GET the swipey page
 

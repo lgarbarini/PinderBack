@@ -33,7 +33,7 @@ while next_url != None:
 
 
 opp_dict = {}
-for opp in opprtunities_list:
+for opp in opportunities_list:
 	opp_dict[opp['req_id']] = opp
 
 ##########################
@@ -43,24 +43,28 @@ for opp in opprtunities_list:
 
 class User:
 
-	def __construct__():
-		left_list = []
-		right_list = []
+	def __init__(self):
+		self.left_list = []
+		self.right_list = []
 
 
 	def add_to_left(self, opportunity_id):
-		left_list.append(opportunity_id)
+		self.left_list.append(opportunity_id)
 	def add_to_right(self, opportunity_id):
-		right_list.append(opportunity_id)
+		self.right_list.append(opportunity_id)
 
 	# Returns true if the user has NOT already seen this opportunity
-	def is_new(self, opportunity_id):
-		#return if 
-		print ""
+	def has_not_seen(self, opportunity_id):
+		if opportunity_id in self.left_list:
+			return False
+		elif opportunity_id in self.right_list:
+			return False
+		else:
+			return True
 
 	#Returns a list of the ids of matched opportunities.
-	def get_matches_list():
-		print "I do moar stuffs"
+	def get_matches_list(self):
+		return self.right_list
 
 ## A dictionary that maps user_id's to User objects
 
@@ -85,7 +89,11 @@ def swipey_page(user_id):
 @app.route("/GetNextOp/<user_id>")
 def get_next_opportunity(user_id):
 	# Replace later based off of user preference data....
-	opp = random.choice(opprtunities_list)
+	opp = random.choice(opportunities_list)
+	user = users_map[user_id]
+	while (user.has_not_seen(opp)) == 0:
+		opp = random.choice(opportunities_list)
+		print "infinite loop?" +  str(~user.has_not_seen(opp))
 	return jsonify(opp)
 
 
@@ -107,11 +115,13 @@ def post_swipe_right(user_id, op_id):
 
 @app.route("/GetMatchList/<user_id>")
 def get_match_list(user_id):
-	match_list = users_map[user_id].get_match_list()
-	return_list = list()
+	match_list = users_map[user_id].get_matches_list()
+	# return str(opp_dict[users_map[user_id].get_matches_list()[0]])
+	return_list = []
 	for op_id in match_list:
 		return_list.append(opp_dict[op_id])
-	return jsonify(return_list)
+	return_object = {'list': return_list}
+	return jsonify(return_object)
 
 
 app.debug = True

@@ -10,7 +10,7 @@ from flask import request
 #So this shit runs on heruko
 port = int(os.environ.get('PORT', 5000))
 
-app = Flask('Pinder')
+app = Flask('Pinder',static_url_path='')
 
 
 ##########################

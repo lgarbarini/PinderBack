@@ -1,5 +1,5 @@
 from flask import Flask
-import redis
+
 app = Flask('Pinder')
 
 

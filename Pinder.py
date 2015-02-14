@@ -1,16 +1,22 @@
 from flask import Flask
 import redis
 import os
+import requests
 
+#So this shit runs on heruko
 port = int(os.environ.get('PORT', 5000))
+
 app = Flask('Pinder')
 
 
 ##########################
 ## Loading the Data Set ##
 
-
-
+r = requests.get('http://www.peacecorps.gov/api/v1/openings/')
+list_of_stuffs = r.json()['results']
+print r.json()['next']
+for l in list_of_stuffs:
+	print l['title']
 
 ##########################
 

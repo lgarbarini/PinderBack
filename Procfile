@@ -1,1 +1,1 @@
-web: python PinderBack/Pinder.py
+web: python Pinder.py

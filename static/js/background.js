@@ -54,7 +54,7 @@ function addCard(d){
     //conver to for loop once we know what to make;
     //these are strings since I'm too lazy to make d a real JSON object
     makeChild(d.title, '', 'h1', newCard);
-    makeChild(capitaliseFirstLetter(d.country), 'toggle', 'p', newCard);
+    makeChild(capitaliseFirstLetter(d.country), 'toggle', 'h3', newCard);
     makeChild(d.project_description, 'toggle hidden', 'p', newCard);
 		makeChild('<div id=\"op_id\" style=\"display: none;\">'+d.req_id+'</div>', '', 'div', newCard);
 		makeChild('<div class = \"flag\" style=\"background: url('+d.country_flag_image+');\"</div>', '','p',newCard)
@@ -154,7 +154,7 @@ function showDetail(d){
     console.log("show detail" + d);
     detailContainer.classList.add('open');
     makeChild(d.title, '', 'h1', detailCard);
-    makeChild(d.country, '', 'p', detailCard);
+    makeChild(capitaliseFirstLetter(d.country), '', 'h3', detailCard);
     makeChild(d.project_description, '', 'p', detailCard);
 
     menu.addEventListener('click', hideDetail);
@@ -215,8 +215,8 @@ function getMatchList(user_id,c){
             for(var i=msg.list.length-1;i>0;i--){
                 var newMatchCard = document.createElement("div");
                 newMatchCard.classList.add('matchCard');
-                makeChild(msg.list[i].title, '', 'h2', newMatchCard);
-                makeChild(msg.list[i].country, 'toggle', 'p', newMatchCard);
+                makeChild(msg.list[i].title, '', 'h3', newMatchCard);
+                makeChild(capitaliseFirstLetter(msg.list[i].country), 'toggle', 'p', newMatchCard);
                 matchesContainer.appendChild(newMatchCard);
 	       }
         }

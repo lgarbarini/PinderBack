@@ -13,7 +13,7 @@
    height="60.0000000"
    id="svg1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="reject.svg"
+   sodipodi:docname="menuhover.svg"
    sodipodi:version="0.32"
    version="1.0"
    width="60.0000000"
@@ -75,14 +75,14 @@
      bordercolor="#666666"
      borderopacity="1.0"
      id="base"
-     inkscape:cx="9.0080172"
-     inkscape:cy="14.678974"
+     inkscape:cx="11.134582"
+     inkscape:cy="34.263165"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:window-height="685"
+     inkscape:window-height="669"
      inkscape:window-width="1016"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="103"
+     inkscape:window-y="179"
      inkscape:zoom="6.9465337"
      pagecolor="#ffffff"
      showgrid="false"
@@ -118,8 +118,24 @@
        xlink:href="#linearGradient900" />
   </defs>
   <path
-     d="M 15.674663,15.572746 L 44.587629,44.485711 M 45.118838,15.420972 L 15.522889,45.016920"
-     id="path845"
+     d="m 44.668988,20.127763 -29.164079,0.08483"
+     id="path845-1"
      sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
-     style="fill:none;fill-opacity:0.75000000000000000;fill-rule:evenodd;stroke:#fc6363;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+     style="fill:none;stroke:#ff6622;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="M 44.494244,30.70359 15.330165,30.78842"
+     id="path845-7"
+     sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+     style="fill:none;stroke:#ff6622;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="M 44.494244,40.70359 15.330165,40.78842"
+     id="path845-4"
+     sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+     style="fill:none;stroke:#ff6622;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
 </svg>

@@ -15,7 +15,7 @@ app = Flask('Pinder')
 r = requests.get('http://www.peacecorps.gov/api/v1/openings/?page=1')
 next_url = r.json()['next']
 
-opprtunities_list = r.json()['results']
+opportunities_list = r.json()['results']
 
 while next_url != None:
 	r = requests.get(next_url)

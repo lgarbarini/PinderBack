@@ -1,5 +1,7 @@
 from flask import Flask
 import redis
+
+port = int(os.environ.get('PORT', 5000))
 app = Flask('Pinder')
 
 
@@ -54,4 +56,4 @@ def get_match_list(user_id):
 app.debug = True
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=port)

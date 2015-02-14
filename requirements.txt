@@ -1,0 +1,8 @@
+Cython>=0.21
+DataShape>=0.3.0
+Flask>=0.10.1
+Jinja2>=2.7.3
+MarkupSafe>=0.23
+itsdangerous>=0.24
+pyOpenSSL>=0.14
+redis>=2.9.1

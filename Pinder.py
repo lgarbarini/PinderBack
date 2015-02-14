@@ -110,6 +110,7 @@ def get_next_opportunity(user_id):
 def post_swipe_left(user_id, op_id):
 	user = get_user(user_id)
 	user.add_to_left(op_id)
+	return jsonify('Success')
 
 #POST swipe right
 
@@ -117,6 +118,7 @@ def post_swipe_left(user_id, op_id):
 def post_swipe_right(user_id, op_id):
 	user = get_user(user_id)
 	user.add_to_right(op_id)
+	return jsonify('Success')
 
 #GET match list
 
